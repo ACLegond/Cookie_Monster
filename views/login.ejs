@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <% if (message) { %>
+        <p style="color: red;"><%= message %></p>
+    <% } %>
+    <form action="/login" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" value="<%= savedUsername %>" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" value="<%= savedPassword %>" required>
+        <br>
+        <label>
+            <input type="checkbox" name="remember" value="true">
+            Remember Me
+        </label>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/register">Register here</a>.</p>
+</body>
+</html>
